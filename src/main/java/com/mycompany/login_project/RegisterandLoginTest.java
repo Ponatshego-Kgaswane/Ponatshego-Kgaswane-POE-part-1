@@ -76,6 +76,7 @@ public class RegisterandLoginTest {
      */
     @Test
     public void testValidLogin() {
+        System.out.println("Successfully logged in");
         RegisterandLogin instance = new RegisterandLogin();
         instance.setUsername("kyl_1");
         instance.setPassword("Ch&&sec@ke99!");
