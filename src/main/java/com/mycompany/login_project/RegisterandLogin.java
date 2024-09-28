@@ -76,7 +76,7 @@ public class RegisterandLogin {
     // Method to login user and verify the credentials
     public boolean login(String username, String password) {
         if (this.username == null || this.password == null) {
-            System.out.println("No user found, please create an account first.");
+            System.out.println("No user found, please establish an account first.");
             return false;
         }
   if (this.username.equals(username) && this.password.equals(password)) {
