@@ -17,26 +17,26 @@ public class Login_project {
            // Keep asking for valid account creation details using a while loop
         boolean isAccountCreated = false;
 
-        System.out.println("Hi, please create an account");
+        System.out.println("Hi, Let's create your account!");
 
         while (!isAccountCreated) {
             //firstname
-            System.out.print("Enter first name: ");
+            System.out.print("Please enter your first name: ");
             String firstName = sc.nextLine();
             system.setFirstName(firstName);
             
             //last name
-            System.out.print("Enter last name: ");
+            System.out.print("Please enter your last name: ");
             String lastName = sc.nextLine();
             system.setLastName(lastName);
             
             //username and requirements
-            System.out.print("Enter username: ");
+            System.out.print("Please enter your username: ");
             String username = sc.nextLine();
             system.setUsername(username);
             
             //password and requirements
-            System.out.print("Enter password: ");
+            System.out.print("Please enter your password: ");
             String password = sc.nextLine();
             system.setPassword(password);
 
@@ -55,9 +55,9 @@ public class Login_project {
 
         // Proceed to login if account creation is successful
         System.out.println("Login:");
-        System.out.print("Enter username: ");
+        System.out.print("Please enter your username: ");
         String loginUsername = sc.nextLine();
-        System.out.print("Enter password: ");
+        System.out.print("Please enter your password: ");
         String loginPassword = sc.nextLine();
 
         // Attempt login
