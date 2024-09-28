@@ -70,7 +70,7 @@ public class RegisterandLogin {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Account created successfully!");
+        System.out.println("Profile establishment complete!");
     }
 
     // Method to login user and verify the credentials
