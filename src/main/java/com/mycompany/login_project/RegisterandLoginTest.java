@@ -89,6 +89,7 @@ public class RegisterandLoginTest {
      */
     @Test
     public void testInvalidLogin() {
+        System.out.println("Login not successful. Check username and password");
         RegisterandLogin instance = new RegisterandLogin();
         instance.setUsername("kyl_1");
         instance.setPassword("Ch&&sec@ke99!");
