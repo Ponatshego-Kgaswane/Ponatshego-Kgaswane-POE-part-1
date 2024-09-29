@@ -14,28 +14,28 @@ public class Login_project {
            RegisterandLogin system = new RegisterandLogin();
         Scanner sc = new Scanner(System.in);
 
-           // Keep asking for valid account creation details using a while loop
-        boolean isAccountCreated = false;
+           
+        boolean AccountEstablishment = false;
 
         System.out.println("Hi, Let's create your account!");
-
-        while (!isAccountCreated) {
-            //firstname
+// Usage of a loop
+        while (!AccountEstablishment) {
+            ////Prompt user for details
             System.out.print("Please enter your first name: ");
             String firstName = sc.nextLine();
             system.setFirstName(firstName);
             
-            //last name
+            
             System.out.print("Please enter your last name: ");
             String lastName = sc.nextLine();
             system.setLastName(lastName);
             
-            //username and requirements
+        
             System.out.print("Please enter your username: ");
             String username = sc.nextLine();
             system.setUsername(username);
             
-            //password and requirements
+            
             System.out.print("Please enter your password: ");
             String password = sc.nextLine();
             system.setPassword(password);
@@ -49,18 +49,18 @@ public class Login_project {
                 System.out.println("Invalid password! Password must be at least 8 characters long, contain a capital letter, a number, and a special character.");
             } else {
  system.Account(username, password, firstName, lastName);
-                isAccountCreated = true;
+                AccountEstablishment = true;
             }
         }
 
-        // Proceed to login if account creation is successful
+         // Prompt for login. Assume registration was successful
         System.out.println("Login:");
         System.out.print("Please enter your username: ");
         String loginUsername = sc.nextLine();
         System.out.print("Please enter your password: ");
         String loginPassword = sc.nextLine();
 
-        // Attempt login
+        // login
         system.login(loginUsername, loginPassword);
     }
     }
