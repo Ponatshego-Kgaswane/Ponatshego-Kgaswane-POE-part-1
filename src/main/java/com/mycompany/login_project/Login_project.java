@@ -14,7 +14,7 @@ public class Login_project {
     public static void main(String[] args) {
         RegisterandLogin login = new RegisterandLogin();
         
-        // Registration loop
+        // While loop for registration or creation of user account
         boolean registered = false;
         while (!registered) {
             JOptionPane.showMessageDialog(null, "Please register your account.");
@@ -28,8 +28,8 @@ public class Login_project {
             login.setFirstName(firstName);
             login.setLastName(lastName);
             
-  // Display registration result
-            String result = login.registerUser();
+  // Showing of Registration results after user registers
+            String result = login.registerUser(firstName, lastName, username, password);
             JOptionPane.showMessageDialog(null, result);
             
             if (result.equals("Username and Password successfully captured")) {
@@ -37,14 +37,14 @@ public class Login_project {
             }
         }
         
-// Login loop
+// Login (while) loop
         boolean loggedin = false;
         while (!loggedin) {
             JOptionPane.showMessageDialog(null, "Registration complete. Please log in.");
             String inputUsername = JOptionPane.showInputDialog(null, "Enter username:");
             String inputPassword = JOptionPane.showInputDialog(null, "Enter password:");
             
-            // Display login result
+            // Display login result when user has logged in
             if (login.loginUser(inputUsername, inputPassword)) {
                 loggedin = true;
                 JOptionPane.showMessageDialog(null, "Login successful!");
@@ -56,7 +56,7 @@ public class Login_project {
         showMenu(login.getFirstName(), login.getLastName());
     }
     
- // Menu for EasyKanban
+ // Creation of EasyKanban Menu
     public static void showMenu(String firstName, String lastName) {
          JOptionPane.showMessageDialog(null, "Welcome to EasyKanban, " + firstName + " " + lastName + ".");
   boolean running = true;
