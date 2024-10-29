@@ -17,7 +17,7 @@ public class Task {
     private String taskStatus;
     private String taskID;
 
-    // Constructor
+    // implementation of constructor
     public Task(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskStatus) {
         this.taskName = taskName;
         this.taskNumber = taskNumber;
@@ -28,19 +28,19 @@ public class Task {
         this.taskID = createTaskID();
     }
 
-    // Check task description length
+    // Method to Check task description length
     public boolean checkTaskDescription() {
         return taskDescription.length() <= 50;
     }
 
-    // Generate task ID
+    // Generating of task ID
     public String createTaskID() {
         String taskInitials = taskName.substring(0, 2).toUpperCase();
         String developerEnd = developerDetails.substring(developerDetails.length() - 3).toUpperCase();
         return taskInitials + ":" + taskNumber + ":" + developerEnd;
     }
 
-    // Print task details
+    // Method to print task details
     public String printTaskDetails() {
         return "Task Status: " + taskStatus + "\n" +
                "Developer Details: " + developerDetails + "\n" +
@@ -51,7 +51,7 @@ public class Task {
                "Task Duration: " + taskDuration + "hrs\n";
     }
 
-    // Return task duration
+    // Method to return task duration
     public int returnTaskDuration() {
         return taskDuration;
     }
