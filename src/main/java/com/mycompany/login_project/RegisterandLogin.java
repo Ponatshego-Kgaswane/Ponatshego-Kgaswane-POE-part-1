@@ -14,20 +14,20 @@ public class RegisterandLogin {
     private String username;
     private String password;
     
-    // Getters and Setters
+    // Getters and Setters methods
     public RegisterandLogin() {}
     
     public String getFirstName() {return this.firstName;}
     public void setFirstName(String firstname) {this.firstName = firstname;}
     public String getLastName() {return this.lastName;}
-    public void setLastName(String lastname) {this.lastName = lastname;} // Corrected setLastName method
+    public void setLastName(String lastname) {this.lastName = lastname;} 
     public String getUsername() {return this.username;}
     public void setUsername(String username) {this.username = username;}
     public String getPassword() {return this.password;}
     public void setPassword(String password) {this.password = password;}
     
 // Method for a valid password and requirements/rules
-    public boolean isValidPassword() {
+    public boolean checkPasswordComplexity(String password) {
         if (password == null) return false;
         if (password.length() < 8) return false;
         if (!Pattern.compile("[A-Z]").matcher(password).find()) return false;
@@ -36,21 +36,21 @@ public class RegisterandLogin {
         return true;
     }
     
-    // Method for a valid username
-    public boolean isValidUsername() {
+    // Method for a validating username
+    public boolean checkUserName(String username) {
         return username != null && username.contains("_") && username.length() <= 5;
     }
     
-    // User credentials validation
+    // Method for user credentials validation 
     public boolean loginUser(String inputUsername, String inputPassword) {
         return this.username.equals(inputUsername) && this.password.equals(inputPassword);
     }
-     // Register user
-    public String registerUser() {
-        if (!isValidUsername()) {
+     // A method for registering user
+    public String registerUser(String firstName, String lastName, String username, String password) {
+        if (!checkUserName(username)) {
             return "Username is not correctly formatted. Please ensure that your username contains an underscore and is no more than 5 characters in length.";
         }
-        if (!isValidPassword()) {
+        if (!checkPasswordComplexity(password)) {
             return "Password is not correctly formatted. Please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.";
         }
         return "Username and Password successfully captured";
